@@ -19,7 +19,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    withDockerRegistry([credentialsId: 'romanpshenychniak', url: 'https://your-docker-registry']) {
+                    withDockerRegistry([credentialsId: 'romanpshenychniak', url: 'https://localhost:8080']) {
                         dockerImage.push()
                     }
                 }
